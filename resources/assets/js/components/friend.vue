@@ -37,7 +37,8 @@
                 axios.get('add_friend' + this.profile_user_id)
 
                 .then((r) => {
-                    if()
+                    if(this.data == 1)
+                        this.status = 'waiting'
                 })
             }
         }

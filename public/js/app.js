@@ -42941,9 +42941,54 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 40 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token (40:19)\n\n\u001b[0m \u001b[90m 38 | \u001b[39m\n \u001b[90m 39 | \u001b[39m            \u001b[33m.\u001b[39mthen((r) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 | \u001b[39m                \u001b[36mif\u001b[39m()\n \u001b[90m    | \u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 | \u001b[39m            })\n \u001b[90m 42 | \u001b[39m        }\n \u001b[90m 43 | \u001b[39m    }\u001b[0m\n");
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        var _this = this;
+
+        axios.get('/check_relationship/' + this.profile_user_id).then(function (resp) {
+            console.log(resp);
+
+            _this.status = resp.data.status;
+        });
+    },
+
+
+    props: ['profile_user_id'],
+
+    data: function data() {
+        return {
+            status: '',
+            loading: true
+        };
+    },
+
+
+    methods: {
+        add_friend: function add_friend() {
+            var _this2 = this;
+
+            axios.get('add_friend' + this.profile_user_id).then(function (r) {
+                if (_this2.data == 1) _this2.status = 'waiting';
+            });
+        }
+    }
+});
 
 /***/ }),
 /* 41 */
